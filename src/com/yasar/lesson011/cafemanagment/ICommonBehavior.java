@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson011.cafemanagment;
+package com.yasar.lesson011.cafemanagment;
 /*
     Genel davranışlar interface'i
     1- interfaclerde genelde govdesiz metodlar kullanılır

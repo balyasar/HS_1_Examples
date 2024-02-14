@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson011.interfacedemo;
+package com.yasar.lesson011.interfacedemo;
 /*
     Bir arac sınıfımız olsun
     Daha sonra ucak otomobil kamyon gemi gibi sınıflarımızı olsutuaralım

@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson011.abstractdemo;
+package com.yasar.lesson011.abstractdemo;
 /*
     1 Database sınıfımız var
      database sınıfı baglantı için username ve password degerleini barındırıyor

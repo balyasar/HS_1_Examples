@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson011.abstractdemo;
+package com.yasar.lesson011.abstractdemo;
 
 public abstract class Database {
     private int id;

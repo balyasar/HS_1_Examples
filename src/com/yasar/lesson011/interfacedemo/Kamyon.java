@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson011.interfacedemo;
+package com.yasar.lesson011.interfacedemo;
 
 public class Kamyon extends  Arac implements IKaraTasiti,IYukTasiyabilir{
 
