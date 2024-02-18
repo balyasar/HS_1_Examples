@@ -44,7 +44,7 @@ public class VadesizHesap extends Hesap implements IVadesizIslemler {
     }
 
     @Override
-    public double gunlukLimitArttır() {
+    public double gunlukLimitArttir() {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Gunluk limit artısı belrile");
         double limit=Double.parseDouble(scanner.nextLine());

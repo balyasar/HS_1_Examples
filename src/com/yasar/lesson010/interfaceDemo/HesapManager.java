@@ -31,7 +31,7 @@ public class HesapManager {
         } else if (hesap instanceof VadesizHesap) {
             System.out.println(hesap.getClass().getSimpleName());
             hesap.setBakiye(hesap.getBakiye() - miktar);
-        } else if (hesap instanceof KrediHesabı) {
+        } else if (hesap instanceof KrediHesabi) {
             System.out.println(hesap.getClass().getSimpleName());
             hesap.setBakiye(hesap.getBakiye() - miktar);
         } else {
@@ -47,15 +47,15 @@ public class HesapManager {
     public static void main(String[] args) {
         Hesap vadesizHesap1 = new VadesizHesap(UUID.randomUUID().toString(), 1500, "Mustafa", 55000, 50000);
         Hesap vadeliHesap1 = new VadeliHesap(UUID.randomUUID().toString(), 100000, "Mustafa", 32);
-        Hesap krediHesabı = new KrediHesabı(UUID.randomUUID().toString(), 10000, "Serkan");
+        Hesap krediHesabi = new KrediHesabi(UUID.randomUUID().toString(), 10000, "Serkan");
         paraCek(500, vadesizHesap1);
         paraCek(500, vadeliHesap1);
-        paraCek(600, krediHesabı);
+        paraCek(600, krediHesabi);
 
         System.out.println("///////////////////////////////");
         paraCekPolimorfism(500, vadeliHesap1);
         paraCekPolimorfism(250, vadesizHesap1);
-        paraCekPolimorfism(600, krediHesabı);
+        paraCekPolimorfism(600, krediHesabi);
 
         //    vadeliHesap1.faziGetirisiHesapla();
         ((VadeliHesap) vadeliHesap1).hesapBilgileriGetir();
