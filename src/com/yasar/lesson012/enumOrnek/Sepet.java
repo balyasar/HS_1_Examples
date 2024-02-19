@@ -1,15 +1,14 @@
 package com.yasar.lesson012.enumOrnek;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 public class Sepet {
     private String id;
     private List<EUrun> urunler;
-    private double total;
-    private int urunSayisi;
+    private double total = 0;
+    private int urunSayisi = 0;
 
 
     public Sepet() {
