@@ -45,7 +45,6 @@ public class Manager {
         System.out.println("0 - <<< C I K I S >>>");
     }
 
-
     public void addUrun() {
         System.out.println("""
                                 
@@ -66,8 +65,6 @@ public class Manager {
         } else {
             System.out.println("Ürünün Stoðu Bitmiþtir.");
         }
-
-
     }
 
     public void urunleriListele() {
