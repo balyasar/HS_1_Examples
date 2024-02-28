@@ -7,7 +7,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Kuyruk
- * <p>
+ *
  * FIFO --> First in first out
  */
 
