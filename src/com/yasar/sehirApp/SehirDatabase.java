@@ -1,4 +1,4 @@
-package com.yasar.lesson14.sehirApp;
+package com.yasar.sehirApp;
 
 public class SehirDatabase {
     static String[] sehirler = {"Adana", "Adýyaman", "Afyon", "Aðrý", "Amasya", "Ankara", "Antalya", "Artvin", "Aydýn",

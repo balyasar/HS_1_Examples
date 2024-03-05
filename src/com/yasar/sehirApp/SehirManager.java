@@ -1,4 +1,4 @@
-package com.yasar.lesson14.sehirApp;
+package com.yasar.sehirApp;
 
 import java.util.ArrayList;
 import java.util.Collections;

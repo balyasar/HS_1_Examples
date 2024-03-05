@@ -1,4 +1,4 @@
-package com.yasar.lesson14.sehirApp;
+package com.yasar.sehirApp;
 
 public enum EBolge {
     BOLGE_1,

@@ -1,4 +1,4 @@
-package com.yasar.lesson14.sehirApp;
+package com.yasar.sehirApp;
 
 public class Sehir implements Comparable<Sehir> {
     private String isim;
