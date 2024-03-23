@@ -1,4 +1,4 @@
-package com.yasar.lesson14.setOrnek;
+package com.yasar.lesson014.setOrnek;
 
 import java.util.Scanner;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.yasar.lesson14.mapOrnek;
+package com.yasar.lesson014.mapOrnek;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

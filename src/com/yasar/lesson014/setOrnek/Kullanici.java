@@ -1,6 +1,5 @@
-package com.yasar.lesson14.setOrnek;
+package com.yasar.lesson014.setOrnek;
 
-import javax.naming.ldap.HasControls;
 import java.util.Objects;
 
 public class Kullanici {

@@ -1,8 +1,7 @@
-package com.yasar.lesson15;
+package com.yasar.lesson015;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
