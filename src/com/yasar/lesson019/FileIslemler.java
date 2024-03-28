@@ -1,9 +1,9 @@
-package com.bilgeadam.lesson019;
+package com.yasar.lesson019;
 
 import java.io.*;
 
 /*
- 1- dosya olustur==> dısarıdan dosya ismini alacak  eger ilk defa olsuturyorsam  fileornekler.txt basrılı sekilde olustu
+ 1- dosya olustur==> dÄ±sarÄ±dan dosya ismini alacak  eger ilk defa olsuturyorsam  fileornekler.txt basrÄ±lÄ± sekilde olustu
   eger daha once varsa   fileornekler.txt daha once olusturulmustur.
  */
 public class FileIslemler {
@@ -15,14 +15,14 @@ public class FileIslemler {
                 "    2- Dosya Sil\n" +
                 "    3- Dosya ya veri ekle\n" +
                 "    4- Dosya dan veri oku\n" +
-                "    5- Dosya daki bir harfi başka bir harf ile değiştir");
+                "    5- Dosya daki bir harfi baÅŸka bir harf ile deÄŸiÅŸtir");
     }
 
     public void uygulama() {
         int secim = 0;
         do {
             menu();
-            secim = Utility.intDegerAlma("lütfen bir işlem seciniz");
+            secim = Utility.intDegerAlma("lÃ¼tfen bir iÅŸlem seciniz");
             switch (secim) {
                 case 1:
                     dosyaOlustur();
@@ -50,13 +50,13 @@ public class FileIslemler {
     }
 
     /*
-        hangi dosyayı okumak istiyorsa kullanıcdan dosya ismini alalım
-        bu dosyayı okuyup içindeki verileri bir String degerde tutalım
+        hangi dosyayÄ± okumak istiyorsa kullanÄ±cdan dosya ismini alalÄ±m
+        bu dosyayÄ± okuyup iÃ§indeki verileri bir String degerde tutalÄ±m
 
      */
 
     public String dosyayadanVeriOkuma() {
-        String fileName = Utility.stringDegerAlma("Lütfen Dosya Adını dosya uzantısı ile beraber giriniz");
+        String fileName = Utility.stringDegerAlma("LÃ¼tfen Dosya AdÄ±nÄ± dosya uzantÄ±sÄ± ile beraber giriniz");
         File dosya = new File(FileSabitler.path + fileName);
         String tumMetin = "";
 
@@ -70,7 +70,7 @@ public class FileIslemler {
                     tumMetin += metin + "\n";
                 }
             } else {
-                System.out.println("Dosya Bulunamadı");
+                System.out.println("Dosya BulunamadÄ±");
             }
 
         } catch (FileNotFoundException e) {
@@ -91,25 +91,25 @@ public class FileIslemler {
 
 
     /*
-        veri yazmak istediğimiz dosya ismini kullanıcadan alalım daha sonra
-        hangi veriyi yazmak istiyortsak onuda kullanıcadan alıp o dosya içine yazdıralım
+        veri yazmak istediÄŸimiz dosya ismini kullanÄ±cadan alalÄ±m daha sonra
+        hangi veriyi yazmak istiyortsak onuda kullanÄ±cadan alÄ±p o dosya iÃ§ine yazdÄ±ralÄ±m
      */
 
     public void dosyayaVeriYaz() {
-        String fileName = Utility.stringDegerAlma("Lütfen Dosya Adını dosya uzantısı ile beraber giriniz");
+        String fileName = Utility.stringDegerAlma("LÃ¼tfen Dosya AdÄ±nÄ± dosya uzantÄ±sÄ± ile beraber giriniz");
         File dosya = new File(FileSabitler.path + fileName);
         BufferedWriter writer = null;
         try {
             if (dosya.exists()) {
                 System.out.println("Dosya bulundur");
-                String metin = Utility.stringDegerAlma("Yazmak istediğiniz metni giriniz.");
+                String metin = Utility.stringDegerAlma("Yazmak istediÄŸiniz metni giriniz.");
                 writer = new BufferedWriter(new FileWriter(dosya, true));
                 writer.write(metin);
                 writer.newLine();
             } else
-                System.out.println("Aradığınız dosya bulunamamıştır.");
+                System.out.println("AradÄ±ÄŸÄ±nÄ±z dosya bulunamamÄ±ÅŸtÄ±r.");
         } catch (Exception e) {
-            System.out.println("Beklenmeyen bir hata oluştu.");
+            System.out.println("Beklenmeyen bir hata oluÅŸtu.");
 
         } finally {
             if (writer != null) {
@@ -124,12 +124,12 @@ public class FileIslemler {
     }
 
     /*
-     silmek istenen dosya ismi kullanıcıdan alınsın (uzantısı ile beraber alalım   filedeneme1.txt)
-     eger dosya varsa  silme işleminden sonra basarılı bir şekilde silindi cıkstıını verelim
-     dosya yoksa dosya bulunamadı ()
+     silmek istenen dosya ismi kullanÄ±cÄ±dan alÄ±nsÄ±n (uzantÄ±sÄ± ile beraber alalÄ±m   filedeneme1.txt)
+     eger dosya varsa  silme iÅŸleminden sonra basarÄ±lÄ± bir ÅŸekilde silindi cÄ±kstÄ±Ä±nÄ± verelim
+     dosya yoksa dosya bulunamadÄ± ()
      */
     public void dosyaSil() {
-        String fileName = Utility.stringDegerAlma("Lutfen silmek istediginiz dosya adinı uzantısı ile beraber giriniz!");
+        String fileName = Utility.stringDegerAlma("Lutfen silmek istediginiz dosya adinÄ± uzantÄ±sÄ± ile beraber giriniz!");
         File dosya = new File(FileSabitler.path + fileName);
         if (dosya.delete()) {
             System.out.println("DOSYA BASARILI SEKILDE SILINDI");
@@ -139,13 +139,13 @@ public class FileIslemler {
     }
 
     public void dosyaOlustur() {
-        String fileName = Utility.stringDegerAlma("Lutfen bir dosya adinı uzantısı ile beraber giriniz!");
+        String fileName = Utility.stringDegerAlma("Lutfen bir dosya adinÄ± uzantÄ±sÄ± ile beraber giriniz!");
         File dosya = new File(FileSabitler.path + fileName);
         try {
             if (dosya.createNewFile()) {
-                System.out.println(dosya.getAbsolutePath() + " adlı Dosya basarili bir sekilde olusturuldu!");
+                System.out.println(dosya.getAbsolutePath() + " adlÄ± Dosya basarili bir sekilde olusturuldu!");
             } else {
-                System.out.println(dosya.getAbsolutePath() + " adlı Dosya daha onceden olusturulmustur!");
+                System.out.println(dosya.getAbsolutePath() + " adlÄ± Dosya daha onceden olusturulmustur!");
 
             }
         } catch (IOException e) {

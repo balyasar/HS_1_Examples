@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson018;
+package com.yasar.lesson018;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson020.dateOrnek;
+package com.yasar.lesson020.dateOrnek;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

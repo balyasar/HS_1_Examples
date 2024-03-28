@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-package com.bilgeadam.lesson017;
-=======
 package com.yasar.lesson017;
->>>>>>> origin/main
-
 public enum ErrorType {
 
     DOLU_YER_SECIMI(101, "Sectiğiniz alan doludur lutfen başka bir alan seçiniz"),

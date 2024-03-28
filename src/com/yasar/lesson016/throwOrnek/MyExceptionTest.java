@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson016.throwOrnek;
+package com.yasar.lesson016.throwOrnek;
 
 /*
     checked Exception==> kontrol edilmesi zorunlu exceptionlar ==> Excepiton ve bu sınıftan miras alan sınıflar

@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson016.throwOrnek;
+package com.yasar.lesson016.throwOrnek;
 
 public class InfinityException extends RuntimeException {
     private String message;

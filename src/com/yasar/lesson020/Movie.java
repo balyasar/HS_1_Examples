@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson020;
+package com.yasar.lesson020;
 
 import java.io.Serializable;
 

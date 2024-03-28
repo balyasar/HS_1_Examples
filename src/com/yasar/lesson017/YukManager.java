@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson017;
+package com.yasar.lesson017;
 
 public class YukManager {
 

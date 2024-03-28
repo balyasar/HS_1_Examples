@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson019.ogrenciSecmeApp;
+package com.yasar.lesson019.ogrenciSecmeApp;
 
 /*
     ogrenci.txt dosyasını okuyup

@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson020.threadOrnek;
+package com.yasar.lesson020.threadOrnek;
 
 public class Calisan extends Thread {
 

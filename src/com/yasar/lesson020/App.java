@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson020;
+package com.yasar.lesson020;
 
 import com.bilgeadam.lesson019.FileSabitler;
 

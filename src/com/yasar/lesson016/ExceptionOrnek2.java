@@ -1,4 +1,4 @@
-package com.bilgeadam.lesson016;
+package com.yasar.lesson016;
 
 import java.util.Scanner;
 
