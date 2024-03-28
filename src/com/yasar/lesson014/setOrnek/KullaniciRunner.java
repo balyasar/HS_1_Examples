@@ -1,4 +1,4 @@
-package com.yasar.lesson14.setOrnek;
+package com.yasar.lesson014.setOrnek;
 
 import java.util.HashSet;
 import java.util.Set;

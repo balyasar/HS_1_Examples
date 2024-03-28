@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.bilgeadam.lesson017;
+=======
+package com.yasar.lesson017;
+>>>>>>> origin/main
 /*
   1-Bir limanımız olacak bu limanda yuk yerleştirlecek alanlar olacak
     limanda yuk yerleştirelcek alanlar liman olusturken belilenebilir
