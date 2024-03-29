@@ -2,158 +2,155 @@ package com.yasar.lesson015;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-public class StreamOrnek {
-    /*
+/*
         COLLECT
-          Stream yapısındaki verileri herhangi bir collectionda toplamya yarıyor
+          Stream yapÄ±sÄ±ndaki verileri herhangi bir collectionda toplamya yarÄ±yor
           collect metodu toplama collect(Collectors.toList()) ==> bu metod listede toplamaya yarar
           collect metodu toplama collect(Collectors.toSet()) ==> bu metod set de toplamaya yarar
 
         FOREACH
         foreach metodu herhangi bir deger dondurmez(return degeri yoktur)
-        foreach metodu stream akışını sonlandırı foreachden sonra herhangi bir stream metodunu kullanılamaz
+        foreach metodu stream akÄ±ÅŸÄ±nÄ± sonlandÄ±rÄ± foreachden sonra herhangi bir stream metodunu kullanÄ±lamaz
 
         MAP
         map metodu bize bir deger dondurur. ve mutlaka return bekler
-        map metodunda sonra başka stream metodlarnı kullanabiliriz
-        map metodunu çalıstırdımgız listeden bagımsız farklı veri turlerinde listeler donebilir
+        map metodunda sonra baÅŸka stream metodlarnÄ± kullanabiliriz
+        map metodunu Ã§alÄ±stÄ±rdÄ±mgÄ±z listeden bagÄ±msÄ±z farklÄ± veri turlerinde listeler donebilir
 
-        FİLTER
-        filter filreleme işlemleri için kullanılır
-        mutlaka bir koşul gerektirir
-        bize bir stream yapısı done biz bunu collection da toplyabilirz
-        filter içinde kullancagımız kosulların donus tipleri mutlaka true yada false olmalıdır
-        filter sadece uzerinde calıstıgı collection turunde bir collectşon doner
-        filter stream akısını sonlandırmaz devamınada stream metodları kullanilabilir
+        FÄ°LTER
+        filter filreleme iÅŸlemleri iÃ§in kullanÄ±lÄ±r
+        mutlaka bir koÅŸul gerektirir
+        bize bir stream yapÄ±sÄ± done biz bunu collection da toplyabilirz
+        filter iÃ§inde kullancagÄ±mÄ±z kosullarÄ±n donus tipleri mutlaka true yada false olmalÄ±dÄ±r
+        filter sadece uzerinde calÄ±stÄ±gÄ± collection turunde bir collectÅŸon doner
+        filter stream akÄ±sÄ±nÄ± sonlandÄ±rmaz devamÄ±nada stream metodlarÄ± kullanilabilir
       */
+public class StreamOrnek {
+
 
     public static void main(String[] args) {
-        Stream<Integer> stream = Stream.of(10, 20, 402, 50);
-        //Streamler tüketildikten sonra bir daha kullanılamaz.
-        stream.forEach(System.out::println);
-        //stream.forEach(System.out::println);
-        System.out.println("------------------------------------");
+        Stream<Integer> stream=Stream.of(10,20,402,50);
+        // streamler tuketildikten sonra bir daha kullanÄ±lamaz
+    //    stream.forEach(System.out::println);
+    //    stream.forEach(System.out::println);
 
-        List<Integer> sayilar = new ArrayList<>(List.of(25, 32, 45, 87, 95));
-        //FOREACH KULLANIMI
-        //1 - çift sayilari yazdiralım. Stream yapisi kullanarak.
-        sayilar.forEach(x -> System.out.println(x + 5));
-        System.out.println("------------------------------------");
-        sayilar.forEach(x -> {
-            if (x % 2 == 0)
-                System.out.println(x);
-        });
-        System.out.println("------------------------------------");
+        List<Integer> sayilar=new ArrayList<>(List.of(25,32,45,87,95));
+           //FOREACH KULLANIMI
+        //1- Ã§ift sayÄ±larÄ± yazdÄ±ralÄ±m stream yapÄ±sÄ± kullanarak
+        sayilar.stream().forEach(x-> System.out.println(x+5));
 
-        //2 - Sayılar listesindeki elemanları başka bir listede toplayacağız.
-        //Fakat bunu yaparken çift sayıların 5 eksiğini, tek sayıların 11 fazlasını toplayalım.
-
-        List<Integer> sayilar2 = new ArrayList<>();
-        sayilar.stream().forEach(x -> {
-            if (x % 2 == 0) {
-                sayilar2.add(x - 5);
-            } else {
-                sayilar2.add(x + 11);
+        sayilar.stream().forEach(x-> {
+            if (x%2==0){
+                System.out.println("Ã§iftsayi");
             }
         });
+        System.out.println("///////////////");
+
+        //2- sayilar listesindeki elamanlarÄ± baska bir listede toplayacagÄ±z fakat bunu yaparken
+        // Ã§ift sayÄ±larÄ±n 5 eksigini tek sayilarÄ±n 11 fazlasÄ±nÄ± toplayalÄ±m
+
+        List<Integer> sayilar2=new ArrayList<>();
+        sayilar.stream().forEach(s->{
+            if (s%2==0){
+                sayilar2.add(s-5);
+            }else {
+                sayilar2.add(s+11);
+            }
+        }  );
+
         System.out.println(sayilar2);
-        System.out.println("------------------------------------");
-        List<Integer> sayilar3 = new ArrayList<>();
-        sayilar3.stream().forEach(x -> sayilar3.add(x + 10));
+        List<Integer> sayilar3=new ArrayList<>();
+        sayilar.stream().forEach(s->sayilar3.add(s+10));
         System.out.println(sayilar3);
 
-        // MAP KULLANIMI
-        //2 - Sayılar listesindeki elemanları başka bir listede toplayacağız.
-        //Fakat bunu yaparken çift sayıların 5 eksiğini, tek sayıların 11 fazlasını toplayalım.
+        /// MAP KULLANIMI
+        //2- sayilar listesindeki elamanlarÄ± baska bir listede toplayacagÄ±z fakat bunu yaparken
+        // Ã§ift sayÄ±larÄ±n 5 eksigini tek sayilarÄ±n 11 fazlasÄ±nÄ± toplayalÄ±m
 
-        List<Integer> sayilar5 = sayilar.stream().map(x -> {
-            if (x % 2 == 0) {
-                return x - 5;
+        List<Integer> sayilar5 = sayilar.stream().map(s -> {
+            if (s % 2 == 0) {
+                return s - 5;
             } else {
-                return x + 11;
+                return s + 11;
             }
         }).collect(Collectors.toList());
 
 
-
-        System.out.println("Sayılar 5 ... : " + sayilar5);
-
-        sayilar.stream().map(x -> {
-            if (x % 2 == 0) {
-                return x - 5;
+        sayilar.stream().map(s -> {
+            if (s % 2 == 0) {
+                return s - 5;
             } else {
-                return x + 11;
+                return s + 11;
             }
         }).forEach(System.out::println);
 
-
-        List<Integer> sayilar6 = sayilar.stream().map(x -> x + 10).toList();
-        System.out.println(sayilar6);
-        List<String> stringList = sayilar.stream().map(x -> x + "=").collect(Collectors.toList());
+     List<Integer> sayilar6 =sayilar.stream().map(x->x+10).toList();
+     System.out.println(sayilar6);
+     List<String> stringList=sayilar.stream().map(x->x+"=").collect(Collectors.toList());
         System.out.println(stringList);
-        List<Boolean> booleanList = sayilar.stream().map(x -> {
-            if (x % 2 == 0)
-                return true;
-            else
-                return false;
-        }).collect(Collectors.toList());
+
+    List<Boolean> booleanList=sayilar.stream().map(x->{
+        if (x%2==0){
+            return  true;
+        }else {
+            return  false;
+        }
+    }  ).collect(Collectors.toList());
         System.out.println(booleanList);
+        sayilar.stream().map(x->x+"abc").forEach(y-> System.out.println(y.toUpperCase().substring(1)));
+       // System.out.println("sayilar5="+sayilar5);
 
-        sayilar.stream().map(x -> x + "abc").forEach(y -> System.out.println(y.toUpperCase().substring(1)));
+//        Set<Integer> sayilar6 = sayilar.stream().map(s -> {
+//            if (s % 2 == 0) {
+//                return s - 5;
+//            } else {
+//                return s + 11;
+//            }
+//        }).collect(Collectors.toSet());   ;
 
+        ///FILTER
 
+       sayilar.stream().filter(x->x%2==0).forEach(System.out::println);
 
-       /* Set<Integer> sayilar6 = sayilar.stream().map(x -> {
-            if (x % 2 == 0) {
-                return x - 5;
-            } else {
-                return x + 11;
-            }
-        }).collect(Collectors.toSet());*/
+       List<String> programlar=new ArrayList<>(List.of("Java","React","Html","Css","JavaScript","JQuery","NodeJs"));
+       // J ile baslayan programlarÄ± yazdrÄ±alÄ±m
+        programlar.stream().filter(p->p.startsWith("J")).forEach(System.out::println);
+        // J ile baslayan programlarÄ± bir listede toplayalÄ±m
 
-        //FILTER
+    List<String> JIleBaslayanlar= programlar.stream().filter(p->p.startsWith("J")).collect(Collectors.toList());
+        System.out.println(JIleBaslayanlar);
+        // J ile baslamayan programlarÄ± bir listede toplayalÄ±m
 
-        sayilar.stream().filter(x -> x % 2 == 0).forEach(System.out::println);
-        System.out.println("------------------------------------");
-        List<String> programlar = new ArrayList<>(List.of("Java", "React", "Html", "Css", "Javascript", "JQuery", "NodeJs"));
-        // J ile başlayan programları yazdıralım.
-        programlar.stream().filter(x -> x.startsWith("J")).forEach(System.out::println);
-        // J ile başlayan programları bir listede toplayalım.
-        List<String> jIleBaslayanlar = programlar.stream().filter(x -> x.startsWith("J")).collect(Collectors.toList());
-        System.out.println(jIleBaslayanlar);
+        List<String> digerProgramlar=programlar.stream().filter(x->{
+                    if (x.startsWith("J")){
+                        return  false;
+                    }else{
+                        return  true;
+                    }
+                }
+        ).toList();
 
-        //J ile başlamayan programları bir listede toplayalım.
-        List<String> digerProgramlar = programlar.stream().filter(x -> {
-            if (x.startsWith("J"))
-                return false;
-            else
-                return true;
-        }).toList();
         System.out.println(digerProgramlar);
 
-        //J ile başlayanların uzunluklarını bir listede toplayalım.
-
-        List<Integer> jIleBaslayanlarinUzunlugu = programlar.stream().filter(x -> x.startsWith("J")).map(y -> y.length()).toList();
-        System.out.println(jIleBaslayanlarinUzunlugu);
-
-        programlar.stream().filter(x -> x.startsWith("J")).map(y -> y.length()).forEach(System.out::println);
-
-        //J ile başlayanların uzunluklarını 5'ten büyükse bu uzunlukları bir listede toplayalım.
-
-        List<Integer> uzunluklar = programlar.stream()
-                .filter(x -> x.startsWith("J"))
-                .map(y -> y.length())
-                .filter(z -> z > 5).toList();
-
-        programlar.stream().filter(x -> x.startsWith("J") && x.length() >= 5).map(y -> y.length()).forEach(System.out::println);
+        // J ile baslayanlarÄ±n uzunluklarÄ±nÄ± bir listede toplayalÄ±m
+        List<Integer>  uzunluklar =programlar.stream().filter(x->x.startsWith("J")).map(y->y.length()).toList();
         System.out.println(uzunluklar);
 
-        // TENARY KULLANIMI ORNEK
-        System.out.println("-------------------------------------");
-        sayilar.stream().map(x -> x % 2 == 0 ? x - 5 : x + 11).forEach(System.out::println);
+        programlar.stream().filter(x->x.startsWith("J")).map(y->y.length()).forEach(System.out::println);
+
+        //// J ile baslayanlarÄ±n  uzunluklarÄ± 5 den buyuk ise bu uzunluklarÄ± bir listede toplayalÄ±m
+
+        List<Integer>  uzunluklar2 = programlar.stream().filter(x->x.startsWith("J")).map(y->y.length()).filter(z->z>5).toList();
+        System.out.println(uzunluklar2);
+     programlar.stream().filter(x->x.startsWith("J")&&x.length()>5).map(y->y.length()).forEach(System.out::println);
+
+        // Tenary kullanÄ±mÄ± ornek
+        sayilar.stream().map(s ->s%2==0 ? s-5:s+11).forEach(System.out::println);
+
+
 
 
     }

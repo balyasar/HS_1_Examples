@@ -1,6 +1,6 @@
 package com.yasar.lesson020;
 
-import com.bilgeadam.lesson019.FileSabitler;
+import com.yasar.lesson019.FileSabitler;
 
 import java.io.*;
 import java.util.ArrayList;
