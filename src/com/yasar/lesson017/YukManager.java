@@ -4,7 +4,7 @@ public class YukManager {
 
 
     public void agirlikBelirle() {
-        int agırlık = Utility.intDegerAlma("lütfen bir agırlık giriniz");
+        int agirlik = Utility.intDegerAlma("lütfen bir agırlık giriniz");
 
     }
 

@@ -91,7 +91,7 @@ public class App {
         return index - 1;
     }
 
-    public double agırlıkBelirle() {
+    public double agirlikBelirle() {
         double agirlik = Utility.doubleDegerAlma("Lütfen bir ağırlık giriniz");
         if (agirlik < 250) {
             throw new LimanException(ErrorType.YETERSIZ_AGIRLIK);
@@ -136,7 +136,7 @@ public class App {
         Yuk yuk = null;
         try {
             MyDate date = tarihBelirle();
-            double agirlik = agırlıkBelirle();
+            double agirlik = agirlikBelirle();
             yuk = new Yuk(agirlik, date);
         } catch (LimanException exception) {
             System.out.println("hata oluştu: " + exception.getMessage());
